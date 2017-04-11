@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "MaladIFServer.h"
-#include "MaladIFServerDlg.h"
+#include <iostream>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -75,25 +75,6 @@ BOOL CMaladIFServerApp::InitInstance()
 	// TODO: modifiez cette chaîne avec des informations appropriées,
 	// telles que le nom de votre société ou organisation
 	SetRegistryKey(_T("Applications locales générées par AppWizard"));
-
-	CMaladIFServerDlg dlg;
-	m_pMainWnd = &dlg;
-	INT_PTR nResponse = dlg.DoModal();
-	if (nResponse == IDOK)
-	{
-		// TODO: placez ici le code définissant le comportement lorsque la boîte de dialogue est
-		//  fermée avec OK
-	}
-	else if (nResponse == IDCANCEL)
-	{
-		// TODO: placez ici le code définissant le comportement lorsque la boîte de dialogue est
-		//  fermée avec Annuler
-	}
-	else if (nResponse == -1)
-	{
-		TRACE(traceAppMsg, 0, "Avertissement : échec de création de la boîte de dialogue, par conséquent, l'application s'arrête de manière inattendue.\n");
-		TRACE(traceAppMsg, 0, "Avertissement : si vous utilisez les contrôles MFC de la boîte de dialogue, vous ne pouvez pas exécuter #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS.\n");
-	}
 
 	// Supprimer le gestionnaire de shell créé ci-dessus.
 	if (pShellManager != NULL)
