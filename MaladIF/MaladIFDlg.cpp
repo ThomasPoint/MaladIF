@@ -1,7 +1,8 @@
 
 // MaladIFDlg.cpp : fichier d'implémentation
 //
-
+#include <iostream>
+#include <sstream>
 #include "stdafx.h"
 #include "MaladIF.h"
 #include "MaladIFDlg.h"
@@ -55,15 +56,20 @@ CMaladIFDlg::CMaladIFDlg(CWnd* pParent /*=NULL*/)
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CMaladIFDlg::DoDataExchange(CDataExchange* pDX)
+/*void CMaladIFDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-}
+	DDX_Control(pDX, IDC_EDIT3, Genome);
+} */
 
 BEGIN_MESSAGE_MAP(CMaladIFDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	
+	ON_EN_CHANGE(IDC_EDIT1, &CMaladIFDlg::OnEnChangeEdit1)
+	ON_EN_CHANGE(IDC_EDIT2, &CMaladIFDlg::OnEnChangeEdit2)
+	ON_EN_CHANGE(IDC_EDIT3, &CMaladIFDlg::OnEnChangeEdit3)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +158,57 @@ HCURSOR CMaladIFDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CMaladIFDlg::OnCbnSelchangeCombo1()
+{
+	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CMaladIFDlg::OnCbnSelchangeCombo2()
+{
+	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CMaladIFDlg::OnEnChangeEdit1()
+{
+	// TODO:  S'il s'agit d'un contrôle RICHEDIT, le contrôle ne
+	// envoyez cette notification sauf si vous substituez CDialogEx::OnInitDialog()
+	// fonction et appelle CRichEditCtrl().SetEventMask()
+	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
+
+	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CMaladIFDlg::OnEnChangeEdit2()
+{
+	// TODO:  S'il s'agit d'un contrôle RICHEDIT, le contrôle ne
+	// envoyez cette notification sauf si vous substituez CDialogEx::OnInitDialog()
+	// fonction et appelle CRichEditCtrl().SetEventMask()
+	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
+
+	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CMaladIFDlg::OnEnChangeEdit3()
+{
+	/*UpdateData(TRUE);
+	std::string input;
+	Genome.GetWindowText(input);
+	std::istringstream ss(input);
+	std::string token;
+
+	while (std::getline(ss, token, ',')) {
+		std::cout << token << '\n';
+	} */
+	// TODO:  S'il s'agit d'un contrôle RICHEDIT, le contrôle ne
+	// envoyez cette notification sauf si vous substituez CDialogEx::OnInitDialog()
+	// fonction et appelle CRichEditCtrl().SetEventMask()
+	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
+
+	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
