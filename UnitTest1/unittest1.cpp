@@ -11,14 +11,15 @@ namespace UnitTest1
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(U1001)
 		{
 			Patient patient(1,"Gonnet","Tim");
-			patient.setGenome("A");
-			std::string gen = *patient.getGenome().begin();
-			std::string test = "A";
+			patient.setGenome("A,C,D"); // marche que pour un ordre alphabétique à cause de la perte d'ordre du set
+			std::string gen;
+			for (const std::string &piece : patient.getGenome()) gen += piece+",";
+			gen.erase(gen.size() - 1);
+			std::string test = "A,C,D";
 			Assert::IsTrue(gen.compare(test)==0);
-			//Assert::AreEqual(test,test, "Test 1 failed");
 		}
 
 	};
