@@ -56,11 +56,11 @@ CMaladIFDlg::CMaladIFDlg(CWnd* pParent /*=NULL*/)
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-/*void CMaladIFDlg::DoDataExchange(CDataExchange* pDX)
+void CMaladIFDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_EDIT3, Genome);
-} */
+} //Pourquoi cette méthode a été mise en commentaire ? J'ai (Tim ) décommenté 
 
 BEGIN_MESSAGE_MAP(CMaladIFDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()

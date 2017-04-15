@@ -3,7 +3,7 @@
 
 
 DBMaladies::DBMaladies()
-	:listeMaladies(NULL)
+	//:listeMaladies(NULL)
 {
 }
 
