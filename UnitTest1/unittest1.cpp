@@ -31,6 +31,7 @@ namespace UnitTest1
 			// on ne peut pas modifier le diagnostic après l'avoir ajouter l'analyse au patient
 			// --> copie des valeurs l'objet lors de l'ajout à la liste 
 			// --> utiliser une liste de pointeur au lieu d'une liste d'objet ?
+			//Ou alors pas besoin, une Analyse est stocké dans Patient que quand son Diagnostic est fait ?
 			Analyse a2("maladie2");
 			patient.ajouterAnalyse(a1);
 			patient.ajouterAnalyse(a2);
@@ -48,6 +49,6 @@ namespace UnitTest1
 			v = patient.rechercherAnalyses(a1.getDate(), "");
 			Assert::IsTrue(v.size() == 1 && a1.estEgal(v.at(0)),L"Test avec la date");
 		}
-
+		
 	};
 }

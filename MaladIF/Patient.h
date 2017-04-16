@@ -3,7 +3,6 @@
 #include <set>
 #include <vector>
 #include "Analyse.h"
-#include "Maladie.h"
 class Patient
 {
 private:

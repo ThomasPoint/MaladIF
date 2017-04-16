@@ -187,9 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Analyse.h" />
-    <ClInclude Include="DBMaladies.h" />
+    <ClInclude Include="DBMedecin.h" />
     <ClInclude Include="Diagnostic.h" />
-    <ClInclude Include="Maladie.h" />
     <ClInclude Include="MaladIF.h" />
     <ClInclude Include="MaladIFDlg.h" />
     <ClInclude Include="Patient.h" />
@@ -199,8 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Analyse.cpp" />
-    <ClCompile Include="DBMaladies.cpp" />
-    <ClCompile Include="Maladie.cpp" />
+    <ClCompile Include="DBMedecin.cpp" />
     <ClCompile Include="MaladIF.cpp" />
     <ClCompile Include="MaladIFDlg.cpp" />
     <ClCompile Include="Patient.cpp" />

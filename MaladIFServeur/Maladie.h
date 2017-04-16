@@ -5,4 +5,3 @@ public:
 	Maladie();
 	~Maladie();
 };
-

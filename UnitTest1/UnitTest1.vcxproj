@@ -101,7 +101,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>Patient.obj;Analyse.obj;Maladie.obj;stdafx.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Patient.obj;Analyse.obj;stdafx.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
