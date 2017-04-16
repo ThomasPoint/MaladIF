@@ -27,6 +27,10 @@ namespace UnitTest1
 		{
 			Patient patient(1, "Gonnet", "Tim");
 			Analyse a1("maladie1");
+			a1.setDiagnostic(Diagnostic::POSITIF); 
+			// on ne peut pas modifier le diagnostic après l'avoir ajouter l'analyse au patient
+			// --> copie des valeurs l'objet lors de l'ajout à la liste 
+			// --> utiliser une liste de pointeur au lieu d'une liste d'objet ?
 			Analyse a2("maladie2");
 			patient.ajouterAnalyse(a1);
 			patient.ajouterAnalyse(a2);
@@ -40,12 +44,8 @@ namespace UnitTest1
 
 			v = patient.rechercherAnalyses(-1, "maladie3");
 			Assert::IsTrue(v.size() == 0,L"Test avec maladie3");
-
-			a1.setDiagnostic(Diagnostic::POSITIF);
+			
 			v = patient.rechercherAnalyses(a1.getDate(), "");
-			Logger::WriteMessage((std::to_string(v.size()).c_str()));
-			Logger::WriteMessage((std::to_string(a1.getDate()).c_str()));
-			Logger::WriteMessage((std::to_string(a2.getDate()).c_str()));
 			Assert::IsTrue(v.size() == 1 && a1.estEgal(v.at(0)),L"Test avec la date");
 		}
 
