@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Analyse.h"
 
+//dans .h ?
 #include <time.h>
 
 Analyse::Analyse(std::string maladie)
@@ -29,11 +30,13 @@ bool Analyse::getResultat() const
 	return resultat;
 }
 
-bool Analyse::estEgal(Analyse a) const//ne compare que la maladie et la date
+bool Analyse::estEgal(Analyse a) const
 {
-	if (getMaladie().compare(a.getMaladie()) == 0
-		&& getDate() == a.getDate()
-		&& getResultat() == a.getResultat())
+	if (maladie.compare(a.maladie) == 0
+		&& dateFin == a.dateFin
+		&& resultat == a.resultat
+		&& dateDebut == a.dateDebut
+		&& erreur == a.erreur)
 		return true;
 	else
 		return false;

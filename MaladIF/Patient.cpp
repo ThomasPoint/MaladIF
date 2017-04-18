@@ -1,7 +1,11 @@
 #include "stdafx.h"
 #include "Patient.h"
+
+//dans .h ?
 #include <sstream>
 #include <iostream>
+
+
 Patient::Patient(long id, std::string nom, std::string prenom) {
 	this->id = id;
 	this->nom = nom;
@@ -15,13 +19,13 @@ void Patient::setGenome(std::string g) {
 		genome.insert(item);
 	}
 }
-std::set<std::string> Patient::getGenome() {
+std::set<std::string> Patient::getGenome() const {
 	return genome;
 }
-std::vector<Analyse> Patient::rechercherAnalyses(long date, std::string maladie) {
+std::vector<Analyse> Patient::rechercherAnalyses(long date, std::string maladie) const {
 	std::vector<Analyse> result;
 	for (Analyse a : analyses){
-		//si date est défini et que c'est pas celle qu'on veut passe à la prochaine
+		//si date est défini et que c'est pas celle qu'on veut passe à la prochaine Analyse
 		//de même pour maladie
 		if ((date != -1 && a.getDate() != date) || 
 			((!maladie.empty()) && (!(a.getMaladie().find(maladie) != std::string::npos)))) // si maladie est contenu
