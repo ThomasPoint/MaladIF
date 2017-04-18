@@ -22,6 +22,18 @@ void Patient::setGenome(std::string g) {
 std::set<std::string> Patient::getGenome() const {
 	return genome;
 }
+std::string Patient::getNom() const
+{
+	return nom;
+}
+std::string Patient::getPrenom() const
+{
+	return prenom;
+}
+long Patient::getId() const
+{
+	return id;
+}
 std::vector<Analyse> Patient::rechercherAnalyses(long date, std::string maladie) const {
 	std::vector<Analyse> result;
 	for (Analyse a : analyses){
@@ -38,6 +50,15 @@ std::vector<Analyse> Patient::rechercherAnalyses(long date, std::string maladie)
 }
 void Patient::ajouterAnalyse(Analyse analyse) {
 	analyses.push_back(analyse);
+}
+bool Patient::estEgal(Patient a) const //prend en compte que nom, prenom, id
+{
+	if (nom.compare(a.nom) == 0
+		&& prenom.compare(a.prenom) == 0
+		&& id == a.id)
+		return true;
+	else
+		return false;
 }
 
 Patient::~Patient()
